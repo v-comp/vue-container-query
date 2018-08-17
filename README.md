@@ -16,13 +16,13 @@ npm i -D vue-container-query
 
 ## API
 
-### `<ContainerQuery :query="query" :initialSize="{ width, height }>`
+### `<container-query :query="query" :initialSize="{ width, height } />`
 
 ```html
 <template>
-  <ContainerQuery :query="query" v-model="params">
+  <container-query :query="query" v-model="params">
     <pre class="app">{{ params }}</pre>
-  </ContainerQuery>
+  </container-query>
 </template>
 
 <script>

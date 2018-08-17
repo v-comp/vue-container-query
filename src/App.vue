@@ -1,7 +1,7 @@
 <template>
-  <ContainerQuery :query="query" v-model="params">
+  <container-query :query="query" v-model="params">
     <pre class="app">{{ params }}</pre>
-  </ContainerQuery>
+  </container-query>
 </template>
 
 <script>
