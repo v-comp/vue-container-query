@@ -1,28 +1,38 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <ContainerQuery :query="query" v-model="params">
+    <pre class="app">{{ params }}</pre>
+  </ContainerQuery>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { ContainerQuery } from './'
+const query = {
+  'width-between-400-and-599': {
+    minWidth: 400,
+    maxWidth: 599
+  },
+  'width-larger-than-600': {
+    minWidth: 600
+  }
+}
 
 export default {
   name: 'app',
-  components: {
-    HelloWorld
+  components: { ContainerQuery },
+  data () {
+    return { query, params: {} }
   }
 }
 </script>
 
 <style>
-#app {
+.app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  color: #ffffff;
   margin-top: 60px;
+  background: #2c3e50;
+  padding: 30px 100px;
 }
 </style>
