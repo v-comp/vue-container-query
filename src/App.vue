@@ -6,6 +6,7 @@
 
 <script>
 import { ContainerQuery } from './'
+
 const query = {
   'width-between-400-and-599': {
     minWidth: 400,

@@ -4,6 +4,7 @@
 
 <script>
 import { createContainerQueryMixin } from './'
+
 const query = {
   'width-between-400-and-599': {
     minWidth: 400,
@@ -18,9 +19,6 @@ export default {
   name: 'app2',
   mixins: [
     createContainerQueryMixin(query)
-  ],
-  data () {
-    return { query, params: {} }
-  }
+  ]
 }
 </script>

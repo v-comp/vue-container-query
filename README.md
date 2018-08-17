@@ -20,13 +20,18 @@ npm i -D vue-container-query
 
 ```html
 <template>
-  <container-query :query="query" v-model="params">
+  <container-query
+    :query="query"
+    v-model="params"
+    @change="handleChange"
+  >
     <pre class="app">{{ params }}</pre>
   </container-query>
 </template>
 
 <script>
 import { ContainerQuery } from './'
+
 const query = {
   'width-between-400-and-599': {
     minWidth: 400,
@@ -38,10 +43,12 @@ const query = {
 }
 
 export default {
-  name: 'app',
   components: { ContainerQuery },
   data () {
     return { query, params: {} }
+  },
+  methods: {
+    handleChange () {}
   }
 }
 </script>
@@ -71,6 +78,7 @@ export default {
 
 <script>
 import { createContainerQueryMixin } from './'
+
 const query = {
   'width-between-400-and-599': {
     minWidth: 400,
@@ -82,13 +90,9 @@ const query = {
 }
 
 export default {
-  name: 'app',
   mixins: [
     createContainerQueryMixin(query)
-  ],
-  data () {
-    return { query, params: {} }
-  }
+  ]
 }
 </script>
 ```
