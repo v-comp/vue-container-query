@@ -10,22 +10,11 @@ const ContainerQueryApp = {
   data () {
     return { params: {} }
   },
-  methods: {
-    handleChange (params) {
-      this.params = params
-    }
-  },
-  render (h) {
-    return (
-      <container-query
-        query={this.query}
-        initialSize={this.initialSize}
-        onChange={this.handleChange}
-      >
-        <pre class="app">{ this.params }</pre>
-      </container-query>
-    )
-  }
+  template: `
+<container-query :query="query" :initialSize="initialSize" v-model="params">
+  <pre class="app">{{ params }}</pre>
+</container-query>
+`
 }
 
 describe('ContainerQuery', () => {
@@ -55,4 +44,3 @@ describe('ContainerQuery', () => {
     expect(wrapper.is('pre.app')).toBe(true)
   })
 })
-
